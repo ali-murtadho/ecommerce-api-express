@@ -32,50 +32,38 @@ const getInvoiceByUserEmail = async (req, res) => {
     }
 }
 
-const checkout = async (req, res) => {
+const checkout = async (req,res) => {
     const { email, name, phone, date } = req.body;
 
-    const cart = await prisma.cart.findMany({
-        where: {
-            userId: req.user.id
-        },
-        include: {
-            product: true
-        }
-    });
+    const carts = await prisma.cart.findMany({
+        where: { userId: req.user.userId },
+        include: { product: true }
+    })
 
-    if (cart.length === 0) {
-        return errorResponse(res, "Cart is empty");
+    if (carts.length === 0) {
+        return errorResponse(res, 'Cart is empty')
     }
 
-    const item = cart.map(c => `${c.quantity} x ${c.product.name}`).join(', ');
-
-    const total = cart.reduce((sum, c) => sum + c.total, 0);
+    const items = carts.map(c => `${c.product.name} x ${c.quantity}`).join(', ');
+    const total = carts.reduce((sum, item) => sum + item.total, 0);
 
     const invoice = await prisma.invoice.create({
         data: {
-            email,
-            name,
-            phone,
-            date: new Date(date),
-            item,
-            total,
-            userId: req.user.id,
+          email,
+          name,
+          phone,
+          date: new Date(date),
+          items,
+          total,
+          userId: req.user.id
         }
     });
 
-    // hapus yang di keranjang
-    const deletedCart = await prisma.cart.deleteMany({
-        where: {
-            userId: req.user.id
-        }
-    });
+    await prisma.cart.deleteMany({
+        where: { userId: req.user.userId }
+    })
 
-    if (!deletedCart) {
-        return errorResponse(res, "Checkout failed", { error: "Checkout failed" }, 401);
-    }
-
-    return successResponse(res, "Success checkout", invoice);
+    return successResponse(res, 'Checkout Successful', invoice);
 }
 
 const deleteInvoice = async (req, res) => {

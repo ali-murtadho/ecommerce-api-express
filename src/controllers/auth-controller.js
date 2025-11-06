@@ -37,25 +37,24 @@ export const registerAccount = async (req, res) => {
 export const loginAccount = async (req, res) => {
     const { email, password } = req.body;
 
-    const findUser = await prisma.user.findUnique({
+    const user = await prisma.user.findUnique({
         where: {
             email
         }
     });
 
-    if (!findUser) {
+    if (!user) {
         return errorResponse(res, "User not found", null, 400);
     }
 
-    const isPasswordMatch = await bcrypt.compare(password, findUser.password);
+    const isPasswordMatch = await bcrypt.compare(password, user.password);
 
     if (!isPasswordMatch) {
         return errorResponse(res, "Invalid password", null, 400);
     }
 
     const token = jwt.sign({
-        id: findUser.id,
-        email: findUser.email
+        id: user.id,
     }, process.env.JWT_SECRET, {
         expiresIn: "1d"
     });
@@ -63,8 +62,8 @@ export const loginAccount = async (req, res) => {
     res.cookie("token", token, cookieOptions(req));
 
     return successResponse(res, "User logged in successfully", {
-        id: findUser.id,
-        email: findUser.email,
+        id: user.id,
+        email: user.email,
         token: token,
     });
 }

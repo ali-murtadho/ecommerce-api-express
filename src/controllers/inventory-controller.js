@@ -1,3 +1,4 @@
+import prisma from "../configs/db.js";
 import { errorResponse, successResponse } from "../utils/response.js";
 
 const getListInventory= async (req, res) => {

@@ -153,12 +153,10 @@ const createProduct = async (req, res) => {
         }
         
         const base = req.protocol + "://" + req.get("host");
-        const productWithImgUrl = products.map((product) => ({
-            ...product,
-            image: products.image? cleanImageUrl(base, product.image) : null,
-        }))
-        
-        return successResponse(res, "Success create product", productWithImgUrl);
+        return successResponse(res, "Success create product", {
+            ...products,
+            image: products.image? cleanImageUrl(base, products.image) : null
+        });
     } catch (error) {
         return errorResponse(
             res,
@@ -221,12 +219,10 @@ const updateProduct = async (req, res) => {
         }
     
         const base = req.protocol + "://" + req.get("host");
-        const productWithImgUrl = products.map((product) => ({
-            ...product,
-            image: products.image? cleanImageUrl(base, product.image) : null,
-        }))
-    
-        return successResponse(res, "Success update product", productWithImgUrl);
+        return successResponse(res, "Success update product", {
+            ...products,
+            image: products.image? cleanImageUrl(base, products.image) : null
+        });
     } catch (error) {
         return errorResponse(
             res,
