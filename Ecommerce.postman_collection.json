@@ -1,0 +1,573 @@
+{
+	"info": {
+		"_postman_id": "8debe5de-82be-43b0-899a-8becce5ae902",
+		"name": "Ecommerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41700733",
+		"_collection_link": "https://bagus-tim.postman.co/workspace/Bagus-Tim-Workspace~c2bc28c0-f9cd-4736-8c30-aff42fa461b6/collection/41700733-8debe5de-82be-43b0-899a-8becce5ae902?action=share&source=collection_link&creator=41700733"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alimurtadho@gmail.com\",\n    \"password\": \"password123!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"james\",\n    \"email\": \"lbj@gmail.com\",\n    \"password\": \"Password123*\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventory",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MDVhNjE1LWIyMTUtNGNiNS04OGI1LTU5NTBhNWIxM2ExNSIsImVtYWlsIjoiYWxpbXVydGFkaG9AZ21haWwuY29tIiwiaWF0IjoxNzYyMzM3NTE1LCJleHAiOjE3NjI0MjM5MTV9.iGuqHQPsqyfcs_ZVFGxkwFZf3QVUwmhiCV1bhjTKrks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Barang\",\n    \"description\": \"Barang Deskripsi\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/inventories",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventories"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MDVhNjE1LWIyMTUtNGNiNS04OGI1LTU5NTBhNWIxM2ExNSIsImVtYWlsIjoiYWxpbXVydGFkaG9AZ21haWwuY29tIiwiaWF0IjoxNzYyMzM3NTE1LCJleHAiOjE3NjI0MjM5MTV9.iGuqHQPsqyfcs_ZVFGxkwFZf3QVUwmhiCV1bhjTKrks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/inventories/c1d6996c-cb35-4723-a229-4db7c51962cf",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"inventories",
+								"c1d6996c-cb35-4723-a229-4db7c51962cf"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product By Id",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sepatu Nike",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Impor",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100000",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/user/Downloads/yamal2.6.jpeg"
+								},
+								{
+									"key": "stock",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "inventoryId",
+									"value": "079ca90a-74ad-4254-b4cd-a6b65ea22e68",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "Get All Cart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MDVhNjE1LWIyMTUtNGNiNS04OGI1LTU5NTBhNWIxM2ExNSIsImVtYWlsIjoiYWxpbXVydGFkaG9AZ21haWwuY29tIiwiaWF0IjoxNzYyMzM3NTE1LCJleHAiOjE3NjI0MjM5MTV9.iGuqHQPsqyfcs_ZVFGxkwFZf3QVUwmhiCV1bhjTKrks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sepatu Nike",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Impor",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100000",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/user/Downloads/yamal2.6.jpeg"
+								},
+								{
+									"key": "stock",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "inventoryId",
+									"value": "079ca90a-74ad-4254-b4cd-a6b65ea22e68",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add to Cart",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MDVhNjE1LWIyMTUtNGNiNS04OGI1LTU5NTBhNWIxM2ExNSIsImVtYWlsIjoiYWxpbXVydGFkaG9AZ21haWwuY29tIiwiaWF0IjoxNzYyMzM3NTE1LCJleHAiOjE3NjI0MjM5MTV9.iGuqHQPsqyfcs_ZVFGxkwFZf3QVUwmhiCV1bhjTKrks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Sepatu Nike",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Impor",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "100000",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/Users/user/Downloads/yamal2.6.jpeg"
+								},
+								{
+									"key": "stock",
+									"value": "23",
+									"type": "text"
+								},
+								{
+									"key": "inventoryId",
+									"value": "079ca90a-74ad-4254-b4cd-a6b65ea22e68",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invoice",
+			"item": [
+				{
+					"name": "Get All Invoice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MDVhNjE1LWIyMTUtNGNiNS04OGI1LTU5NTBhNWIxM2ExNSIsImVtYWlsIjoiYWxpbXVydGFkaG9AZ21haWwuY29tIiwiaWF0IjoxNzYyMzM3NTE1LCJleHAiOjE3NjI0MjM5MTV9.iGuqHQPsqyfcs_ZVFGxkwFZf3QVUwmhiCV1bhjTKrks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/invoice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Invoice by Email User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MDVhNjE1LWIyMTUtNGNiNS04OGI1LTU5NTBhNWIxM2ExNSIsImVtYWlsIjoiYWxpbXVydGFkaG9AZ21haWwuY29tIiwiaWF0IjoxNzYyMzM3NTE1LCJleHAiOjE3NjI0MjM5MTV9.iGuqHQPsqyfcs_ZVFGxkwFZf3QVUwmhiCV1bhjTKrks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/invoice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Invoice by ID",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MDVhNjE1LWIyMTUtNGNiNS04OGI1LTU5NTBhNWIxM2ExNSIsImVtYWlsIjoiYWxpbXVydGFkaG9AZ21haWwuY29tIiwiaWF0IjoxNzYyMzM3NTE1LCJleHAiOjE3NjI0MjM5MTV9.iGuqHQPsqyfcs_ZVFGxkwFZf3QVUwmhiCV1bhjTKrks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/invoice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Invoice",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MDVhNjE1LWIyMTUtNGNiNS04OGI1LTU5NTBhNWIxM2ExNSIsImVtYWlsIjoiYWxpbXVydGFkaG9AZ21haWwuY29tIiwiaWF0IjoxNzYyMzM3NTE1LCJleHAiOjE3NjI0MjM5MTV9.iGuqHQPsqyfcs_ZVFGxkwFZf3QVUwmhiCV1bhjTKrks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/invoice/0446109d-9462-4bd7-a0e7-c7a82d7e4209",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"invoice",
+								"0446109d-9462-4bd7-a0e7-c7a82d7e4209"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Checkout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjI5MDVhNjE1LWIyMTUtNGNiNS04OGI1LTU5NTBhNWIxM2ExNSIsImVtYWlsIjoiYWxpbXVydGFkaG9AZ21haWwuY29tIiwiaWF0IjoxNzYyMzM3NTE1LCJleHAiOjE3NjI0MjM5MTV9.iGuqHQPsqyfcs_ZVFGxkwFZf3QVUwmhiCV1bhjTKrks",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"alimurtadho@gmail.com\",\n    \"name\": \"ali murtadho\",\n    \"phone\": \"0871287781\",\n    \"date\": \"2025-11-05\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/invoice",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"invoice"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
